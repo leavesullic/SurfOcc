@@ -108,7 +108,7 @@ class VoxelTemporalSelfAttention(BaseModule):
         thetas = torch.arange(
             self.num_heads,
             dtype=torch.float32) * (2.0 * math.pi / self.num_heads)
-        grid_init = torch.stack([thetas.cos(), thetas.sin(), thetas.cos()+thetas.sin()], -1)  # TODO
+        grid_init = torch.stack([thetas.cos(), thetas.sin(), thetas.cos()+thetas.sin()], -1)
         grid_init = (grid_init /
                      grid_init.abs().max(-1, keepdim=True)[0]).view(
             self.num_heads, 1, 1,

@@ -280,8 +280,7 @@ class BaseDenseHead(BaseModule, metaclass=ABCMeta):
         mlvl_labels = torch.cat(mlvl_labels)
 
         if mlvl_score_factors is not None:
-            # TODO： Add sqrt operation in order to be consistent with
-            #  the paper.
+
             mlvl_score_factors = torch.cat(mlvl_score_factors)
             mlvl_scores = mlvl_scores * mlvl_score_factors
 
